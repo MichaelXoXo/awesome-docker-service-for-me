@@ -1,0 +1,25 @@
+version: "2"
+services:
+    mongodb:
+        image: mongo:4
+        container_name: mongodb # 容器名
+        ports:
+            - "27017:27017"
+        volumes:
+            - "/data/docker_local/mongo/configdb:/data/configdb"
+            - "/data/docker_local/mongo/data/db:/data/db"
+        command: --auth # 开启授权验证
+    mysql:
+        image: mysql:5.7
+        container_name: mysqldb # 容器名
+        ports:
+            - "3306:3306"
+        restart: always
+        environment:
+          MYSQL_ROOT_PASSWORD: 123456 #root管理员用户密码
+          MYSQL_USER: test   #创建test用户
+          MYSQL_PASSWORD: test  #设置test用户的密码
+        volumes:
+            - "/data/docker_local/mysql/config/mysqld.cnf:/etc/mysql/mysql.conf.d/mysqld.cnf"
+            - "/data/docker_local/mysql/data/mysql:/var/lib/mysql"
+        command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci #设置utf8字符集
