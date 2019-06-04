@@ -1,0 +1,13 @@
+version: "3"
+services:
+    jenkins:
+        image: jenkinsci/blueocean:1.15.1
+        container_name: devops-jenkins # 容器名
+        user: root
+        restart: always
+        ports:
+            - "8080:8080"
+            - "50000:50000"
+        volumes:
+            - "/data/docker_local/jenkins-data:/var/jenkins_home"
+            - "/var/run/docker.sock:/var/run/docker.sock"
