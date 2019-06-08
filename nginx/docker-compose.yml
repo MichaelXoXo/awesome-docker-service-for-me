@@ -1,0 +1,12 @@
+server {
+        client_max_body_size 4G;
+        listen  8889;  ## listen for ipv4; this line is default and implied
+        server_name <host_ip or domain_name>; # 换成你服务器的 IP 或绑定的域名
+        charset utf-8;
+        root /data;
+        location / {
+            autoindex on;
+            autoindex_exact_size on;
+            autoindex_localtime on;
+        }
+}
