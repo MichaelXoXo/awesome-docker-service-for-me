@@ -11,6 +11,16 @@ docker stop sonarqube
 docker rm sonarqube
 ```
 
+```shell
+docker run -d --name sonarqube \
+    -p 9000:9000 \
+    -e sonar.jdbc.username=root \
+    -e sonar.jdbc.password=123456 \
+    -e sonar.jdbc.url="jdbc:mysql://172.20.0.2:3306/sonar?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true&useConfigs=maxPerformance&useSSL=false" \
+    -v /data/sonar/extensions:/opt/sonarqube/extensions \
+    sonarqube:7.7-community
+```
+
 ## docker-compose 方式
 
 ```shell
