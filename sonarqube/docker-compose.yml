@@ -9,10 +9,10 @@ services:
         volumes:
             - "/data/sonar/conf:/opt/sonarqube/conf"
             - "/data/sonar/extensions:/opt/sonarqube/extensions"
-            - "/data/sonar/data:/opt/sonarqube/data"
             - "/data/sonar/logs:/opt/sonarqube/logs"
+            # - "/data/sonar/data:/opt/sonarqube/data"
         environment:
           SONAR_JDBC_USERNAME: root #root管理员用户密码
           SONAR_JDBC_PASSWORD: 123456   #创建test用户
-          SONAR_JDBC_URL: jdbc:mysql://172.17.0.2:3306/sonar?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true&useConfigs=maxPerformance&useSSL=false
+          SONAR_JDBC_URL: "jdbc:mysql://172.17.0.2:3306/sonar?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true&useConfigs=maxPerformance&useSSL=false"
         restart: always
