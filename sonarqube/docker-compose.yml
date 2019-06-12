@@ -5,7 +5,7 @@ services:
         container_name: devops-sonar
         ports:
             - "9000:9000"
-            - "9002:9002"
+            # - "9002:9002"
         volumes:
             - "/data/sonar/conf:/opt/sonarqube/conf"
             - "/data/sonar/extensions:/opt/sonarqube/extensions"
