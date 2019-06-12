@@ -1,0 +1,18 @@
+version: "2"
+services:
+    sonar:
+        image: sonarqube:7.7-community
+        container_name: devops-sonar
+        ports:
+            - "9000:9000"
+            - "9002:9002"
+        volumes:
+            - "/data/sonar/conf:/opt/sonarqube/conf"
+            - "/data/sonar/extensions:/opt/sonarqube/extensions"
+            - "/data/sonar/data:/opt/sonarqube/data"
+            - "/data/sonar/logs:/opt/sonarqube/logs"
+        environment:
+          SONAR_JDBC_USERNAME: root #root管理员用户密码
+          SONAR_JDBC_PASSWORD: 123456   #创建test用户
+          SONAR_JDBC_URL: jdbc:mysql://172.17.0.2:3306/sonar?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true&useConfigs=maxPerformance&useSSL=false
+        restart: always
