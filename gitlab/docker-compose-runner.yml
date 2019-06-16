@@ -1,0 +1,17 @@
+version: "2.1"
+services:
+  runner:
+    image: 'gitlab/gitlab-runner:latest'
+    container_name: 'gitlab-runner'
+    restart: always
+    volumes:
+      - '/data/gitlab-runner/config:/etc/gitlab-runner'
+      - '/var/run/docker.sock:/var/run/docker.sock'
+    networks:
+      - gitlab_net
+    extra_hosts:
+      - "gitlab.michael.com:192.168.240.2"
+
+networks:
+  gitlab_net:
+    external: true
