@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 version: "2.4"
+=======
+version: "3"
+>>>>>>> de8e6dd5d38328bd081a063fd107d3528fa9f701
 services:
     gitlab:
         image: 'gitlab/gitlab-ce:latest'
