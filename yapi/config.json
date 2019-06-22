@@ -1,0 +1,33 @@
+{
+   "port": "3001",
+   "adminAccount": "michael@demo.com",
+   "db": {
+      "servername": "192.168.80.4",
+      "DATABASE": "yapi",
+      "port": "27017",
+      "user": "yapi",
+      "pass": "123456",
+      "authSource":"admin"
+   },
+   "mail": {
+      "enable": false,
+      "host": "smtp.163.com",
+      "port": 465,
+      "from": "***@163.com",
+      "auth": {
+         "user": "***@163.com",
+         "pass": "*****"
+      }
+   },
+    "ldapLogin": {
+      "enable": false,
+      "server": "ldap://192.168.5.3:389",
+      "baseDn": "cn=admin,dc=demo,dc=com",
+      "bindPassword": "admin",
+      "searchDn": "dc=demo,dc=com",
+      "searchStandard": "mail",    
+      "emailPostfix": "@demo.com",
+      "emailKey": "mail",
+      "usernameKey": "sn"
+   }
+}

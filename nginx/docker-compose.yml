@@ -4,7 +4,7 @@ services:
         image: nginx
         container_name: nginx # 容器名
         ports:
-            - "8889:8889"
+            - "80:80"
         volumes:
             - "/data/nginx/conf.d:/etc/nginx/conf.d"
             - "/data/nginx/data:/data"

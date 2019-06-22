@@ -17,8 +17,8 @@ services:
           sonar.jdbc.url: "jdbc:mysql://devops-mysql:3306/sonar?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true&useConfigs=maxPerformance&useSSL=false"
         restart: always
         networks:
-         - mysql_net
+         - db_net
 
 networks:
-  mysql_net:
+  db_net:
     external: true
